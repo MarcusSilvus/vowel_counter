@@ -4,7 +4,6 @@
  
  let count = 0;
 
-
  submitEl.addEventListener('click', () => {
   // parse string into array of letters
   // check each letter to see if it equals a,e,i,o,u
@@ -15,7 +14,13 @@
 
   console.log(array.length)
 
-  displayResult = `The result is: ${inputEl.value}`
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 'a' || array[i] === 'e' || array[i] === 'i' ||
+    array[i] === 'o' || array[i] === 'u')
+    count++;
+  }
 
+  displayResult = `The result is: ${count}`
   resultEl.innerHTML = displayResult
+  count = 0;
  })
