@@ -2,21 +2,18 @@
  const resultEl = document.getElementById("result-el");
  const submitEl = document.querySelector("#submit-el");
  
+ const vowels = ["a", "e", "i", "o", "u"];
+
  let count = 0;
 
  submitEl.addEventListener('click', () => {
-  // parse string into array of letters
-  // check each letter to see if it equals a,e,i,o,u
-  // increment count
+
   let displayResult = "";
 
   let array = new String(inputEl.value);
 
-  console.log(array.length)
-
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] === 'a' || array[i] === 'e' || array[i] === 'i' ||
-    array[i] === 'o' || array[i] === 'u')
+  for (let letter of array.toLowerCase()) {
+    if (vowels.includes(letter))
     count++;
   }
 
@@ -24,3 +21,4 @@
   resultEl.innerHTML = displayResult
   count = 0;
  })
+
